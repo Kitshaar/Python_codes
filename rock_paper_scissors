@@ -1,0 +1,11 @@
+
+options = ["rock", "paper", "scissors"]
+
+player_choice = None
+
+while player_choice not in options: 
+    player_choice = input("rock, paper or scissors? : ").lower().strip()
+
+print(f"You chose: {player_choice}")
+
+
