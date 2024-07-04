@@ -1,11 +1,62 @@
+import random
+
+#resources 
 
 options = ["rock", "paper", "scissors"]
+player = 0
+computer = 0
+counter = 0
 
-player_choice = None
+#game starts
 
-while player_choice not in options: 
-    player_choice = input("rock, paper or scissors? : ").lower().strip()
+print("Let's play a game of Rock Paper Scissors\n")
 
-print(f"You chose: {player_choice}")
+while counter < 5 :
+    computer_choice = random.choice(options)
+    player_choice = None
+
+#Player choice 
+    while player_choice not in options: 
+        player_choice = input("rock, paper or scissors? : ").lower().strip()
+
+    print(f"\nYou chose: {player_choice}")
+    print(f"Computer chose: {computer_choice}")
+
+#game logic
+
+    if player_choice == computer_choice : 
+        print("It's tie!")
+        counter += 1
+    else:
+        counter += 1
+        if player_choice == "rock" and computer_choice == "paper" :
+            computer += 1
+            print("You lost!")
+        elif player_choice == "rock" and computer_choice == "scissors" :
+            player += 1
+            print("You won!")
+        elif player_choice == "paper" and computer_choice == "scissors" :
+            computer += 1
+            print("You lost!")
+        elif player_choice == "paper" and computer_choice == "rock" :
+            player += 1
+            print("You won!")
+        elif player_choice == "scissors" and computer_choice == "rock" :
+            computer += 1
+            print("You lost!")
+        elif player_choice == "scissors" and computer_choice == "paper" :
+             player += 1
+             print("You won!")   
+
+#winner logic
+
+if player == computer :
+    print(f"The game of 5 is a tie!")
+elif player > computer :
+    print(f"You won the game of 5 by : {player - computer} points")
+else : 
+    print(f"You lost the game of 5 by : {computer - player} points")
+
+
 
 
